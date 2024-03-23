@@ -1,97 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="output.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Account & Account List</title>
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 </head>
 <body>
-    <div class="container mx-auto px-4 py-2">
-        <div class="flex flex-row justify-between items-center">
-          <h1 class="text-xl font-bold">Create an Account</h1>
-          <p class="text-gray-500">User List</p>
+  <div class="flex w-9/12 h-100">
+    <div class="w-1/3 bg-gray-100 p-4 border-r mt-5 rounded-lg border-gray-200">
+      <h1 class="text-xl font-semibold mb-4">Create Account</h1>
+      <form>
+        <div class="mb-3">
+          <label for="name" class="block mb-2 text-sm font-medium">Name</label>
+          <input type="text" id="name" class="shadow-sm p-2 rounded-md block w-full focus:ring-indigo-500 focus:border-indigo-500">
         </div>
-        <div class="overflow-x-auto sm:-mx-1 lg:-mx-4">
-          <div class="inline-block min-w-full sm:px-1 lg:px-4">
-            <div class="overflow-hidden rounded-lg shadow">
-              <table class="min-w-full leading-normal">
-                <thead>
-                  <tr>
-                    <th
-                      class="px-5 py-3 border-b-2 border-gray-200 text-left text-sm font-semibold text-gray-900"
-                    >
-                      Name
-                    </th>
-                    <th
-                      class="px-5 py-3 border-b-2 border-gray-200 text-left text-sm font-semibold text-gray-900"
-                    >
-                      ID
-                    </th>
-                    <th
-                      class="px-5 py-3 border-b-2 border-gray-200 text-left text-sm font-semibold text-gray-900"
-                    >
-                      Email
-                    </th>
-                    <th
-                      class="px-5 py-3 border-b-2 border-gray-200 text-left text-sm font-semibold text-gray-900"
-                    >
-                      Role
-                    </th>
-                    <th
-                      class="px-5 py-3 border-b-2 border-gray-200 text-left text-sm font-semibold text-gray-900"
-                    >
-                      Actions
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                      Ronalyn Anne Padilla
-                    </td>
-                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                      1
-                    </td>
-                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                      ronalyn.padilla@gmail.com
-                    </td>
-                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                      Admin
-                    </td>
-                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                      -
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                      Ronalyn Test
-                    </td>
-                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                      2
-                    </td>
-                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                      ronalyn.test@gmail.com
-                    </td>
-                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                      User
-                    </td>
-                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                      -
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
+        <div class="mb-3">
+          <label for="email" class="block mb-2 text-sm font-medium">Email</label>
+          <input type="email" id="email" class="shadow-sm p-2 rounded-md block w-full focus:ring-indigo-500 focus:border-indigo-500">
         </div>
-        <div class="flex flex-row justify-end pt-4">
-          <button class="px-4 py-2 border rounded-lg text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-            Create Account
-          </button>
+        <div class="mb-3">
+          <label for="role" class="block mb-2 text-sm font-medium">Role</label>
+          <select id="role" class="shadow-sm p-2 rounded-md block w-full focus:ring-indigo-500 focus:border-indigo-500">
+            <option value="admin">Admin</option>
+            <option value="user">User</option>
+          </select>
         </div>
-      </div> 
-
+        <button type="submit" class="inline-flex items-center px-4 py-2 bg-indigo-500 text-white rounded-md hover:bg-indigo-700 focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+          Create Account
+        </button>
+      </form>
+    </div>
+    <div class="w-9/12 p-4">
+      <h1 class="text-xl font-semibold mb-4">Accounts</h1>
+      <table class="table-auto w-full border border-gray-200">
+        <thead>
+          <tr class="bg-gray-100">
+            <th class="px-4 py-2 text-left">ID</th>
+            <th class="px-4 py-2 text-left">Name</th>
+            <th class="px-4 py-2 text-left">Email</th>
+            <th class="px-4 py-2 text-left">Role</th>
+            <th class="px-4 py-2">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="px-4 py-2">1</td>
+            <td class="px-4 py-2">John Doe</td>
+            <td class="px-4 py-2">john.doe@whoah.com</td>
+            <td class="px-4 py-2">Admin</td>
+            <td class="px-4 py-2 flex items-center space-x-2">
+              <a href="#" class="text-red-500 hover:text-red-700">
+                <i class="fa-solid fa-trash"></i>
+              </a>
+              <a href="#" class="text-indigo-500 hover:text-indigo-700">
+                <i class="fa-solid fa-edit"></i>
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td class="px-4 py-2">1</td>
+            <td class="px-4 py-2">Wassup Cuh</td>
+            <td class="px-4 py-2">wassup.cuuuh@gmailyahoo.com</td>
+            <td class="px-4 py-2">User</td>
+            <td class="px-4 py-2 flex items-center space-x-2">
+              <a href="#" class="text-red-500 hover:text-red-700">
+                <i class="fa-solid fa-trash"></i>
+              </a>
+              <a href="#" class="text-indigo-500 hover:text-indigo-700">
+                <i class="fa-solid fa-edit"></i>
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td class="px-4 py-2">1</td>
+            <td class="px-4 py-2">Gagard</td>
+            <td class="px-4 py-2">gagard@gmail.com</td>
+            <td class="px-4 py-2">User</td>
+            <td class="px-4 py-2 flex items-center space-x-2">
+              <a href="#" class="text-red-500 hover:text-red-700">
+                <i class="fa-solid fa-trash"></i>
+              </a>
+              <a href="#" class="text-indigo-500 hover:text-indigo-700">
+                <i class="fa-solid fa-edit"></i>
+              </a>
+            </td>
+          </tr>
+            
 </body>
 </html>
